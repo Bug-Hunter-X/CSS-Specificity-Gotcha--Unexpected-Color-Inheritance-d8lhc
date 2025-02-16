@@ -1,0 +1,25 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+div {
+  color: blue;
+}
+
+.container div {
+  color: red;
+}
+
+#specificDiv {
+  color: green;
+}
+
+#specificDiv.container {
+  color: purple;
+}
+
+#specificDiv.container.anotherClass {
+  color: yellow;
+}
+```
+
+The issue stems from the unexpected behavior when dealing with multiple class selectors and ID selectors combined with element selectors.  Notice how specificity determines the outcome. The most specific selector will always be applied.
