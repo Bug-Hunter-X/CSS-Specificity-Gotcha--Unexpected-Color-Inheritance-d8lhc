@@ -1,0 +1,28 @@
+The solution to this CSS specificity issue involves clarifying the selectors to avoid confusion and ensure that styles are applied as expected. One approach is to use more specific selectors that better reflect the intended styles or add additional specificity to resolve conflicts.
+
+```css
+/*bugSolution.css*/
+div {
+  color: blue; /* This is our base default styles */
+}
+
+.container div {
+  color: red;
+}
+
+#specificDiv {
+  color: green; /* This is our base default styles */
+}
+
+/*Adding extra specificity using the "!important" keyword to show how to bypass specificity issues */
+#specificDiv.container {
+  color: purple !important;
+}
+
+#specificDiv.container.anotherClass {
+  color: yellow !important;/*This is our base default styles */
+}
+
+```
+
+Note: The use of `!important` should be avoided where possible. In a large CSS project, using `!important` is not recommended as it reduces predictability and makes the code hard to manage and maintain. But this keyword can be used for resolving some very complex CSS conflicts.
